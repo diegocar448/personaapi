@@ -1,13 +1,11 @@
 package one.digitalinnovation.personapi.service;
 
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
+import one.digitalinnovation.personapi.dto.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
-import one.digitalinnovation.personapi.mapper.PersonMapper;
 import one.digitalinnovation.personapi.repository.PersonRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /*@Service indica que essa camada terá todas regras de negocio*/
 @Service
@@ -15,19 +13,18 @@ public class PersonService {
 
     private PersonRepository personRepository;
 
-    private final PersonMapper personMapper = PersonMapper.INSTANCE;
-
-    @Autowired
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 
-
-
-    public MessageResponseDTO createPerson(PersonDTO personDTO){
-        Person personToSave = personMapper.toModel(personDTO);
-
-        Person savedPerson = personRepository.save(personToSave);
+    /*Mapeando uma rota com o verbo HTTP do tipo GET/POST(para criação)*/
+    //@GetMapping
+    @PostMapping
+    /* Passamos o corpo da requisição no parâmetro do método
+        e informamos que esta passando no corpo da Requisição com @RequestBody, indica se chegou 1 json
+     */
+    public MessageResponseDTO createPerson(Person person){
+        Person savedPerson = personRepository.save(person);
         return MessageResponseDTO
                 .builder()
                 .message("Created person with ID " + savedPerson.getId())
