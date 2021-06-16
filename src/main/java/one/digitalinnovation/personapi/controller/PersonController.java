@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /*@RequestMapping mostrando qual será o caminho principal para a nossa api*/
 @RequestMapping("/api/v1/people")
 public class PersonController {
+    
 
     /*@GetMapping um operação do tipo http usando verbo Get*/
     @GetMapping
