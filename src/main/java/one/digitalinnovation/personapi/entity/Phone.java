@@ -6,7 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import one.digitalinnovation.personapi.enums.PhoneType;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.EnumType;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
 
 @Entity
 @Data

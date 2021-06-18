@@ -12,6 +12,8 @@ public class PersonController {
     @GetMapping
     public String getBook(){
         return "API Test!";
+        //jdbc:h2:~/test
+        //spring.datasource.url=jdbc:h2:mem:testdb
     }
 
 
