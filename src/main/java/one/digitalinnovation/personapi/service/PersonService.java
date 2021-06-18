@@ -26,7 +26,6 @@ public class PersonService {
 
     @PostMapping
     public MessageResponseDTO createPerson(PersonDTO personDTO){
-        System.out.println("ENNNNNNNNNNNNNNNNNNTRRRRRRRRRRRRRRROOOUUUUUUUUUUUUUUUUUU");
         Person personToSave = personMapper.toModel(personDTO);
 
 
