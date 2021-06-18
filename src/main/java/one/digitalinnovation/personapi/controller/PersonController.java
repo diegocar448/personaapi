@@ -26,7 +26,7 @@ public class PersonController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED) 
     /*@RequestBody informamos que vamos passar os dados do tipo Person pelo corpo da requisição*/
     public MessageResponseDTO createPerson(@RequestBody Person person){
         return personService.createPerson(person);
