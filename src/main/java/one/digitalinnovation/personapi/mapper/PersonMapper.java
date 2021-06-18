@@ -14,7 +14,7 @@ public interface PersonMapper {
 
     /*Aqui definimos que a data terá apenas dia, mês e ano*/
     /*@Mapping informamos o alvo*/
-    //@Mapping(target = "birthDay", source = "birthDate", dateFormat = "dd-MM-yyyy")
+    @Mapping(target = "birthDay", source = "birthDate", dateFormat = "dd-MM-yyyy")
 
     /*toModel é uma convenção do mapStrict*/
     Person toModel(PersonDTO personDTO);
