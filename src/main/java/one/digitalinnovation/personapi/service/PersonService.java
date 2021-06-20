@@ -1,5 +1,6 @@
 package one.digitalinnovation.personapi.service;
 
+import lombok.AllArgsConstructor;
 import one.digitalinnovation.personapi.dto.response.request.PersonDTO;
 import one.digitalinnovation.personapi.dto.response.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
@@ -16,18 +17,13 @@ import java.util.stream.Collectors;
 
 /*@Service indica para o spring que a camada service será para adicionar as regras de negocio*/
 @Service
+/*@Autowired injeta uma implementação do tipo Repository*/
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
     private PersonRepository personRepository;
 
     private final PersonMapper personMapper = PersonMapper.INSTANCE;
-
-    /*@Autowired injeta uma implementação do tipo Repository*/
-    @Autowired
-    public PersonService(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
-
 
     @PostMapping
     public MessageResponseDTO createPerson(PersonDTO personDTO){
