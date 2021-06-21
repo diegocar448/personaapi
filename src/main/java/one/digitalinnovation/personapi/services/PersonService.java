@@ -1,28 +1,28 @@
-package one.digitalinnovation.personapi.service;
+package one.digitalinnovation.personapi.services;
 
 import lombok.AllArgsConstructor;
+
+import one.digitalinnovation.personapi.dto.response.mapper.PersonMapper;
 import one.digitalinnovation.personapi.dto.response.request.PersonDTO;
 import one.digitalinnovation.personapi.dto.response.response.MessageResponseDTO;
+
 import one.digitalinnovation.personapi.entity.Person;
 import one.digitalinnovation.personapi.exception.PersonNotFoundException;
-import one.digitalinnovation.personapi.mapper.PersonMapper;
-import one.digitalinnovation.personapi.repository.PersonRepository;
+import one.digitalinnovation.personapi.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 /*@Service indica para o spring que a camada service será para adicionar as regras de negocio*/
 @Service
 /*@Autowired injeta uma implementação do tipo Repository*/
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
-    private PersonRepository personRepository;
+    private final PersonRepository personRepository;
 
-    private final PersonMapper personMapper = PersonMapper.INSTANCE;
+    private final PersonMapper personMapper;
 
     public MessageResponseDTO create(PersonDTO personDTO) {
         Person person = personMapper.toModel(personDTO);

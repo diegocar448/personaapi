@@ -1,9 +1,9 @@
-package one.digitalinnovation.personapi.service;
+package one.digitalinnovation.personapi.services;
 
 import one.digitalinnovation.personapi.dto.response.request.PersonDTO;
 import one.digitalinnovation.personapi.dto.response.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
-import one.digitalinnovation.personapi.repository.PersonRepository;
+import one.digitalinnovation.personapi.repositories.PersonRepository;
 import one.digitalinnovation.personapi.utils.PersonUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
