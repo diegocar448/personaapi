@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 /*@Service indica para o spring que a camada service será para adicionar as regras de negocio*/
