@@ -2,12 +2,10 @@ package one.digitalinnovation.personapi.utils;
 
 import one.digitalinnovation.personapi.dto.response.request.PersonDTO;
 
-import one.digitalinnovation.personapi.entity.Person;
-import org.junit.jupiter.api.Test;
+import one.digitalinnovation.personapi.entities.Person;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
-import java.util.Collection;
 import java.util.Collections;
 
 @SpringBootTest

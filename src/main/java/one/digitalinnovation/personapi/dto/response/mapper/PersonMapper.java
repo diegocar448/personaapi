@@ -1,10 +1,9 @@
 package one.digitalinnovation.personapi.dto.response.mapper;
 
 import one.digitalinnovation.personapi.dto.response.request.PersonDTO;
-import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.entities.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 
 /*@Mapper anotação que indica que a classe mapper irá processar*/
